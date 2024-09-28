@@ -42,20 +42,22 @@ function PaginationTable(){
                     <h1>Employee Data Table</h1>
                 </div>
                 <table style={{width:'100%', marginTop:40}}>
-                    <tr style={{backgroundColor:'#009879', color:'white'}}>   
-                        <th style={{padding:10}}>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                    </tr>
-                    {currentPageData.map((row)=>{return(
-                        <tr key={row.id} style={{borderBottom:'1px solid black'}}>
-                            <td>{row.id}</td>
-                            <td>{row.name}</td>
-                            <td>{row.email}</td>
-                            <td>{row.role}</td>
+                    <tbody>
+                        <tr style={{backgroundColor:'#009879', color:'white'}}>   
+                            <th style={{padding:10}}>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
                         </tr>
-                    )})}
+                        {currentPageData.map((row)=>{return(
+                            <tr key={row.id} style={{borderBottom:'1px solid black'}}>
+                                <td>{row.id}</td>
+                                <td>{row.name}</td>
+                                <td>{row.email}</td>
+                                <td>{row.role}</td>
+                            </tr>
+                        )})}
+                    </tbody>
                 </table>
                 <div style={{display:'flex',justifyContent:'center',alignItems:'center', gap:20, width:'100%', margin:20}}>
                     <button onClick={handleClickPrevious} style={{backgroundColor:'#009879', color:'white'}}>Previous</button>
